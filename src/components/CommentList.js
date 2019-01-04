@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
+import * as actions from 'actions'
+import ComListHOC from 'components/ComListHOC'
  class CommentList extends Component {
 
 renderComments(){
-    console.log(this.props.comments)
+  
     
     return this.props.comments.map((item)=>{
         return(
@@ -28,4 +30,4 @@ renderComments(){
      return{comments:state.comments}
  }
 
-export default connect(mapStateToProps)(CommentList)
+export default connect(mapStateToProps,actions)(ComListHOC(CommentList))

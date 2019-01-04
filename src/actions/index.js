@@ -1,4 +1,4 @@
-import {SAVE_COMMENT,FETCH_COMMENTS,CHANGE_AUTH} from 'actions/types'
+import {SAVE_COMMENT,FETCH_COMMENTS,CHANGE_AUTH,DELETE_COMMENTS} from 'actions/types'
 import axios from 'axios'
 
 export function saveComment(comment){
@@ -22,4 +22,11 @@ return{
     type:CHANGE_AUTH,
     payload:isLoggedIn
 }
+}
+
+export function deleteComments(){
+    return{
+        type:DELETE_COMMENTS,
+        payload:null
+    }
 }
